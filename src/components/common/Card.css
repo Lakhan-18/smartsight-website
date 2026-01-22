@@ -1,0 +1,139 @@
+/* ===================================
+   BRUTALIST CARD COMPONENT
+   Geometric, Bold Borders, Harsh Shadows
+   =================================== */
+
+.card {
+    background: var(--white);
+    border: var(--border-thick);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-brutal);
+    transition: all 100ms ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 0 #000000;
+}
+
+/* Card with Accent Border */
+.card-accent {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-brutal-accent);
+}
+
+.card-accent:hover {
+    box-shadow: 12px 12px 0 0 var(--accent);
+}
+
+/* Card with Accent Top Bar */
+.card-accent-top {
+    border-top: 8px solid var(--accent);
+}
+
+/* Dark Card */
+.card-dark {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+.card-dark:hover {
+    transform: translate(-4px, -4px);
+}
+
+/* Flat Card (No Shadow) */
+.card-flat {
+    box-shadow: none;
+}
+
+.card-flat:hover {
+    transform: none;
+    box-shadow: var(--shadow-brutal);
+}
+
+/* Interactive Card */
+.card-interactive {
+    cursor: pointer;
+}
+
+.card-interactive:active {
+    transform: translate(0, 0);
+    box-shadow: var(--shadow-brutal);
+}
+
+/* Card Header */
+.card-header {
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-4);
+    border-bottom: var(--border-medium);
+}
+
+.card-header h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-black);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* Card Body */
+.card-body {
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    line-height: 1.6;
+}
+
+/* Card Footer */
+.card-footer {
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+    border-top: var(--border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Card with Geometric Accent */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 100ms ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        padding: var(--space-4);
+        box-shadow: 6px 6px 0 0 #000000;
+    }
+
+    .card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 0 #000000;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+}

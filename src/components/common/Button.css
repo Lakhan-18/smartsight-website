@@ -1,0 +1,175 @@
+/* ===================================
+   BRUTALIST BUTTON COMPONENT
+   Bold, Geometric, High-Contrast
+   =================================== */
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: var(--border-thick);
+    cursor: pointer;
+    transition: all 100ms ease;
+    white-space: nowrap;
+    box-shadow: var(--shadow-brutal);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Sizes */
+.btn-small {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.btn-medium {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+}
+
+.btn-large {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-xl);
+}
+
+/* Primary - White with Black Border */
+.btn-primary {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--black);
+    color: var(--white);
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.btn-primary:active:not(:disabled) {
+    transform: translate(0, 0);
+    box-shadow: var(--shadow-brutal);
+}
+
+/* Accent - Pink/Red */
+.btn-accent {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-brutal-accent);
+}
+
+.btn-accent:hover:not(:disabled) {
+    background: var(--black);
+    border-color: var(--black);
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* Secondary - Black */
+.btn-secondary {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--white);
+    color: var(--black);
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* Outline */
+.btn-outline {
+    background: transparent;
+    color: var(--black);
+    border-color: var(--black);
+    box-shadow: none;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Ghost */
+.btn-ghost {
+    background: transparent;
+    color: var(--black);
+    border: none;
+    box-shadow: none;
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Full Width */
+.btn-full {
+    width: 100%;
+}
+
+/* Icon */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+/* Loading State */
+.btn-loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button Group */
+.btn-group {
+    display: inline-flex;
+    gap: var(--space-3);
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-large {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-lg);
+    }
+}

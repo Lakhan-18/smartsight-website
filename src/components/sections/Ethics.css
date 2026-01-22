@@ -1,0 +1,107 @@
+.ethics-section {
+    background: var(--color-bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.ethics-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.ethics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.ethics-card {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.ethics-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-secondary);
+    border-radius: var(--radius-xl);
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
+}
+
+.ethics-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--radius-xl);
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.ethics-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.ethics-card p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.ethics-statement {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+    border: 2px solid rgba(6, 182, 212, 0.3);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.ethics-statement h3 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.ethics-statement p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.ethics-statement strong {
+    color: var(--color-cyan);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .ethics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ethics-statement {
+        padding: var(--spacing-xl);
+    }
+}

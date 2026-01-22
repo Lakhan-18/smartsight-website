@@ -1,0 +1,58 @@
+.gradient-text {
+    display: inline-block;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    position: relative;
+}
+
+.gradient-primary {
+    background-image: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+}
+
+.gradient-secondary {
+    background-image: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+}
+
+.gradient-accent {
+    background-image: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #6366f1 100%);
+}
+
+.gradient-rainbow {
+    background: linear-gradient(90deg,
+            var(--color-purple),
+            var(--color-blue),
+            var(--color-cyan),
+            var(--color-pink));
+}
+
+/* Animated Gradient */
+.gradient-animated {
+    animation: gradientShift 6s ease infinite;
+}
+
+.gradient-animated::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    pointer-events: none;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}

@@ -1,0 +1,101 @@
+.problem-section {
+    background: var(--color-bg-secondary);
+    position: relative;
+}
+
+.section-header {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.section-header h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.section-description {
+    font-size: var(--font-size-lg);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.problem-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.problem-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    color: white;
+    font-size: 2.5rem;
+}
+
+.problem-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.problem-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.problem-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1));
+    border: 2px solid rgba(236, 72, 153, 0.3);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+}
+
+.warning-icon {
+    font-size: 3rem;
+    color: var(--color-pink);
+    flex-shrink: 0;
+}
+
+.problem-highlight h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.problem-highlight p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+}
+
+.problem-highlight strong {
+    color: var(--color-pink);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .warning-icon {
+        font-size: 2.5rem;
+    }
+}
